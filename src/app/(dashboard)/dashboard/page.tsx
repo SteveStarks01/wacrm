@@ -7,7 +7,7 @@ import {
   UserPlus,
   DollarSign,
   Send,
-} from 'lucide-react'
+} from '@/components/ui/icons'
 
 import {
   loadActivity,
@@ -116,11 +116,11 @@ export default function DashboardPage() {
   )
 
   return (
-    <div className="space-y-5">
+    <div className="page-shell">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-white">Dashboard</h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <h1 className="page-title">Dashboard</h1>
+        <p className="page-description">
           Live analytics across conversations, contacts, deals, broadcasts, and automations.
         </p>
       </div>

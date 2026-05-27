@@ -59,7 +59,7 @@ export interface FlowTemplate {
   slug: string;
   name: string;
   description: string;
-  /** Used by the gallery to surface a relevant icon. lucide-react name. */
+  /** Used by the gallery to surface a relevant icon from the app icon adapter. */
   icon: "MessageSquare" | "HelpCircle" | "UserPlus";
   trigger_type: "keyword" | "first_inbound_message" | "manual";
   trigger_config: KeywordTriggerConfig | Record<string, unknown>;

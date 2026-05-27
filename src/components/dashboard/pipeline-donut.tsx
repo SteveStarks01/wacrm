@@ -1,6 +1,6 @@
 "use client"
 
-import { GitBranch } from 'lucide-react'
+import { GitBranch } from '@/components/ui/icons'
 import type { PipelineDonutData } from '@/lib/dashboard/types'
 import { EmptyState } from './empty-state'
 import { Skeleton } from './skeleton'
@@ -12,10 +12,10 @@ interface PipelineDonutProps {
 
 export function PipelineDonut({ data, loading }: PipelineDonutProps) {
   return (
-    <section className="flex h-full flex-col rounded-xl border border-slate-800 bg-slate-900">
-      <header className="border-b border-slate-800 px-5 py-4">
-        <h2 className="text-sm font-semibold text-white">Pipeline Value</h2>
-        <p className="mt-0.5 text-xs text-slate-500">
+    <section className="flex h-full flex-col rounded-xl border border-border bg-card">
+      <header className="border-b border-border px-5 py-4">
+        <h2 className="text-sm font-semibold text-foreground">Pipeline Value</h2>
+        <p className="mt-0.5 text-xs text-muted-foreground">
           Open deals by stage
         </p>
       </header>
@@ -40,11 +40,11 @@ export function PipelineDonut({ data, loading }: PipelineDonutProps) {
                     style={{ background: s.color }}
                     aria-hidden
                   />
-                  <span className="flex-1 truncate text-slate-300">{s.name}</span>
-                  <span className="text-slate-500 tabular-nums">
+                  <span className="flex-1 truncate text-foreground">{s.name}</span>
+                  <span className="text-muted-foreground tabular-nums">
                     {s.dealCount} deal{s.dealCount === 1 ? '' : 's'}
                   </span>
-                  <span className="w-20 text-right text-slate-300 tabular-nums">
+                  <span className="w-20 text-right text-foreground tabular-nums">
                     {formatCurrencyShort(s.totalValue)}
                   </span>
                 </li>
@@ -60,7 +60,7 @@ export function PipelineDonut({ data, loading }: PipelineDonutProps) {
 // ------------------------------------------------------------
 // SVG ring. 200×200 viewBox, 12px ring width. We draw one <path>
 // per stage using an SVG arc from startAngle → endAngle. Gaps
-// between segments are implied by a thin slate-900 stroke between
+// between segments are implied by a thin neutral stroke between
 // them for a cleaner look.
 // ------------------------------------------------------------
 function Donut({ data }: { data: PipelineDonutData }) {
@@ -111,7 +111,7 @@ function Donut({ data }: { data: PipelineDonutData }) {
           x={cx}
           y={cy - 6}
           textAnchor="middle"
-          className="fill-slate-500 text-[11px]"
+          className="fill-muted-foreground text-[11px]"
         >
           Total
         </text>

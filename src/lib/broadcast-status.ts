@@ -5,7 +5,7 @@
  * /broadcasts/page.tsx and /broadcasts/[id]/page.tsx with slight
  * drift risk. One source of truth now.
  *
- * Dark-theme only — bg-*-500/10 + text-*-400 + border-*-500/20.
+ * Uses the DESIGN.md semantic palette instead of feature-local colors.
  */
 
 import type { BroadcastStatus, RecipientStatus } from "@/types";
@@ -23,15 +23,15 @@ export interface StatusDisplay {
 export const broadcastStatusConfig: Record<BroadcastStatus, StatusDisplay> = {
   draft: {
     label: "Draft",
-    classes: "bg-slate-500/10 text-slate-400 border-slate-500/20",
+    classes: "bg-secondary text-muted-foreground border-border",
   },
   scheduled: {
     label: "Scheduled",
-    classes: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    classes: "bg-primary/10 text-primary border-primary/20",
   },
   sending: {
     label: "Sending",
-    classes: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
+    classes: "bg-[rgb(244_176_0_/_0.12)] text-[#8a6400] border-[rgb(244_176_0_/_0.35)]",
     pulse: true,
   },
   sent: {
@@ -40,18 +40,18 @@ export const broadcastStatusConfig: Record<BroadcastStatus, StatusDisplay> = {
   },
   failed: {
     label: "Failed",
-    classes: "bg-red-500/10 text-red-400 border-red-500/20",
+    classes: "bg-destructive/10 text-destructive border-destructive/20",
   },
 };
 
 export const recipientStatusConfig: Record<RecipientStatus, StatusDisplay> = {
   pending: {
     label: "Pending",
-    classes: "bg-slate-500/10 text-slate-400 border-slate-500/20",
+    classes: "bg-secondary text-muted-foreground border-border",
   },
   sent: {
     label: "Sent",
-    classes: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    classes: "bg-primary/10 text-primary border-primary/20",
   },
   delivered: {
     label: "Delivered",
@@ -63,11 +63,11 @@ export const recipientStatusConfig: Record<RecipientStatus, StatusDisplay> = {
   },
   replied: {
     label: "Replied",
-    classes: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+    classes: "bg-secondary text-foreground border-border",
   },
   failed: {
     label: "Failed",
-    classes: "bg-red-500/10 text-red-400 border-red-500/20",
+    classes: "bg-destructive/10 text-destructive border-destructive/20",
   },
 };
 

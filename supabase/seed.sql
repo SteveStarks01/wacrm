@@ -1,0 +1,2 @@
+-- Local development seed file.
+-- The app-specific demo user is created by the setup commands in this task.
